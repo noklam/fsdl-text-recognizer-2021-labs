@@ -63,7 +63,7 @@ We left off in Lab 1 having trained an MLP model on the MNIST digits dataset.
 We can now train a CNN for the same purpose:
 
 ```sh
-python3 training/run_experiment.py --model_class=CNN --data_class=MNIST --max_epochs=5 --gpus=1
+python training/run_experiment.py --model_class=CNN --data_class=MNIST --max_epochs=5 --gpus=0
 ```
 
 ## Doing the same for EMNIST
@@ -71,7 +71,7 @@ python3 training/run_experiment.py --model_class=CNN --data_class=MNIST --max_ep
 We can do the same on the larger EMNIST dataset:
 
 ```sh
-python3 training/run_experiment.py --model_class=CNN --data_class=EMNIST --max_epochs=5 --gpus=1
+python training/run_experiment.py --model_class=CNN --data_class=EMNIST --max_epochs=5 --gpus=0
 ```
 
 Training the single epoch will take about 2 minutes (that's why we only do one epoch in this lab :)).

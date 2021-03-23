@@ -1,4 +1,6 @@
 """Experiment-running framework."""
+import os, sys
+sys.path.append(os.getcwd())
 import argparse
 import importlib
 
@@ -93,4 +95,5 @@ def main():
 
 
 if __name__ == "__main__":
+
     main()
