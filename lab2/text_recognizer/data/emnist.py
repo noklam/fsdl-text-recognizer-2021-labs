@@ -65,7 +65,7 @@ class EMNIST(BaseDataModule):
         if stage == "fit" or stage is None:
             with h5py.File(PROCESSED_DATA_FILENAME, "r") as f:
                 self.x_trainval = f["x_train"][:]
-                self.y_trainval = f["y_train"][:].squeeze().astype(int)
+                self.y_trainval = f["y_train"][:].squeeze().astype(np.int64)
 
             data_trainval = BaseDataset(self.x_trainval, self.y_trainval, transform=self.transform)
             train_size = int(TRAIN_FRAC * len(data_trainval))
@@ -77,7 +77,7 @@ class EMNIST(BaseDataModule):
         if stage == "test" or stage is None:
             with h5py.File(PROCESSED_DATA_FILENAME, "r") as f:
                 self.x_test = f["x_test"][:]
-                self.y_test = f["y_test"][:].squeeze().astype(int)
+                self.y_test = f["y_test"][:].squeeze().astype(np.int64)
             self.data_test = BaseDataset(self.x_test, self.y_test, transform=self.transform)
 
     def __repr__(self):
